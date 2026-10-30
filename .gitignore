@@ -1,4 +1,10 @@
 /target/
+/docs/adr/
+AGENTS.md
+CLAUDE.md
+/.agents/
+/.claude/
+/.codex/
 /.watra/
 **/*.rs.bk
 .DS_Store

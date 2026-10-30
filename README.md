@@ -10,7 +10,6 @@ Minimalny szkielet przeglądarki napisanej w Rust. Repozytorium jest workspace'e
 - `apps/watra-desktop` — punkt składania aplikacji desktopowej; obecnie używa pustego adaptera demonstracyjnego.
 - `engines` — manifesty źródeł silników; bez samych źródeł i binariów.
 - `tools` — narzędzia do kontrolowanego pobierania zależności deweloperskich.
-- `docs/adr` — decyzje architektoniczne.
 
 ## Wymagania
 
@@ -54,6 +53,6 @@ cargo clippy --workspace --all-targets -- -D warnings
 
 ## Następne decyzje
 
-Dobór UI (np. GPUI) powinien nastąpić osobno, po przygotowaniu małego eksperymentu technicznego. Granice opisuje [ADR-0001](docs/adr/0001-architecture-boundaries.md), zasady pobierania zewnętrznych źródeł [ADR-0002](docs/adr/0002-engine-source-acquisition.md), a wybór pierwszego adaptera [ADR-0003](docs/adr/0003-cef-first-engine.md).
+Dobór UI (np. GPUI) nastąpi po przygotowaniu małego eksperymentu technicznego.
 
 
