@@ -1,0 +1,7 @@
+/target/
+/.watra/
+**/*.rs.bk
+.DS_Store
+.idea/
+.vscode/
+

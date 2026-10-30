@@ -1,0 +1,12 @@
+[package]
+name = "watra-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+watra-engine-api = { path = "../watra-engine-api" }
+
+[lints]
+workspace = true
+

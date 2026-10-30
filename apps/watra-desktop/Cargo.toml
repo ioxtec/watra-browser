@@ -1,0 +1,13 @@
+[package]
+name = "watra-desktop"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+watra-core = { path = "../../crates/watra-core" }
+watra-engine-api = { path = "../../crates/watra-engine-api" }
+
+[lints]
+workspace = true
+
