@@ -1,0 +1,17 @@
+[package]
+name = "watra-engine-cef"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[features]
+default = []
+cef-runtime = ["dep:cef"]
+
+[dependencies]
+cef = { version = "=156.2.0", optional = true }
+watra-engine-api = { path = "../watra-engine-api" }
+
+[lints]
+workspace = true
+

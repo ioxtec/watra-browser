@@ -3,6 +3,7 @@ members = [
     "apps/watra-desktop",
     "crates/watra-core",
     "crates/watra-engine-api",
+    "crates/watra-engine-cef",
 ]
 resolver = "2"
 
