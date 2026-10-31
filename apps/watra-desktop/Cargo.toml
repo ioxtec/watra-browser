@@ -4,10 +4,32 @@ version.workspace = true
 edition.workspace = true
 rust-version.workspace = true
 
+[package.metadata.cef.bundle]
+helper_name = "watra-desktop-helper"
+
+[features]
+default = ["sandbox"]
+sandbox = ["cef/sandbox"]
+
 [dependencies]
+cef = "=156.2.0"
+gpui = { version = "=0.2.2", default-features = false, features = ["font-kit"] }
+raw-window-handle = "0.6"
+url = "2"
 watra-core = { path = "../../crates/watra-core" }
 watra-engine-api = { path = "../../crates/watra-engine-api" }
+watra-engine-cef = { path = "../../crates/watra-engine-cef", features = ["cef-runtime"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+cocoa = "=0.26.0"
+objc2 = "0.6"
+objc2-app-kit = "0.3.2"
+objc2-foundation = "0.3.2"
 
 [lints]
 workspace = true
+
+[[bin]]
+name = "watra-desktop-helper"
+path = "src/helper.rs"
 

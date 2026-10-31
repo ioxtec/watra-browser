@@ -13,5 +13,6 @@ edition = "2024"
 rust-version = "1.85"
 
 [workspace.lints.rust]
-unsafe_code = "forbid"
+# Keep unsafe out of ordinary crates while allowing explicit FFI module boundaries.
+unsafe_code = "deny"
 

@@ -1,22 +1,16 @@
-use std::convert::Infallible;
+mod browser_session;
+mod browser_shell;
+mod diagnostics;
+mod platform;
+mod renderer_host;
 
-use watra_core::BrowserCore;
-use watra_engine_api::{BrowserEngine, NavigationRequest};
-
-struct PlaceholderEngine;
-
-impl BrowserEngine for PlaceholderEngine {
-    type Error = Infallible;
-
-    fn navigate(&mut self, _request: &NavigationRequest) -> Result<(), Self::Error> {
-        Ok(())
-    }
-}
+#[cfg(target_os = "macos")]
+pub(crate) use platform::{cef_application, cef_pump, window_chrome};
 
 fn main() {
-    let core = BrowserCore::new(PlaceholderEngine);
-    println!(
-        "Watra Browser workspace is ready (current URL: {}).",
-        core.current_url().unwrap_or("none")
-    );
+    match diagnostics::initialize() {
+        Ok(path) => diagnostics::event(&format!("application.start log={}", path.display())),
+        Err(error) => eprintln!("Failed to initialize Watra diagnostics: {error}"),
+    }
+    platform::run();
 }
